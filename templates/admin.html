@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EcoFinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">🌱 EcoFinds <span class="role-badge role-admin">Admin</span></a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('products.browse') }}" class="nav-link">Catalog</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <h2>Global Platform Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Registered Users</h3>
+                <p class="stat-number">{{ stats.total_users }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Products</h3>
+                <p class="stat-number">{{ stats.total_products }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Saved Wishlists</h3>
+                <p class="stat-number">{{ stats.total_wishlists }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Platform Messages</h3>
+                <p class="stat-number">{{ stats.total_messages }}</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Manage Products</h3>
+        <div class="table-container">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Seller</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Eco Score</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in products %}
+                        <tr>
+                            <td>{{ p.id }}</td>
+                            <td><strong>{{ p.title }}</strong></td>
+                            <td>{{ p.seller_name }}</td>
+                            <td>{{ p.category }}</td>
+                            <td>${{ "%.2f"|format(p.price) }}</td>
+                            <td>🌱 {{ p.sustainability_score }}</td>
+                            <td>
+                                <form action="{{ url_for('products.delete', product_id=p.id) }}" method="POST" onsubmit="return confirm('Delete this listing permanently?');">
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top: 40px;">Manage Users</h3>
+        <div class="table-container">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Joined</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in users %}
+                        <tr>
+                            <td>{{ u.id }}</td>
+                            <td>{{ u.name }}</td>
+                            <td>{{ u.email }}</td>
+                            <td><span class="role-badge role-{{ u.role }}">{{ u.role }}</span></td>
+                            <td>{{ u.created_at }}</td>
+                            <td>
+                                {% if u.id != session.get('user_id') %}
+                                    <form action="{{ url_for('admin.delete_user', user_id=u.id) }}" method="POST" onsubmit="return confirm('Delete user account and all their records?');">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - EcoFinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">🌱 EcoFinds</a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('products.browse') }}" class="nav-link">Browse</a>
+                <a href="{{ url_for('admin.user_dashboard') }}" class="nav-link">Dashboard</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <h2>Direct Conversations</h2>
+        <div class="messages-list">
+            {% for msg in messages %}
+                <div class="message-card {% if not msg.is_read and msg.receiver_id == session.get('user_id') %}message-unread{% endif %}">
+                    <div class="msg-header">
+                        <strong>Product: {{ msg.product_title }}</strong>
+                        <span class="msg-timestamp">{{ msg.created_at }}</span>
+                    </div>
+                    <div class="msg-participants" style="margin: 4px 0 10px;">
+                        <small style="color: var(--text-muted);">From: <strong>{{ msg.sender_name }}</strong> → To: <strong>{{ msg.receiver_name }}</strong></small>
+                    </div>
+                    <div class="msg-body" style="margin-bottom: 12px;">
+                        <p>{{ msg.message }}</p>
+                    </div>
+                    <div class="msg-action">
+                        <a href="{{ url_for('products.details', product_id=msg.product_id) }}" class="btn btn-sm btn-outline">Go to Listing</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="empty-state" style="padding: 40px; text-align: center; color: var(--text-muted);">
+                    No messages yet. Send inquiries by clicking "Contact Seller" on any listing!
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browse Products | EcoFinds</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/products.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            🌱 <span>EcoFinds</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html" class="active">
+                Browse
+            </a>
+
+            <a href="sell.html">
+                Sell
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+            <a href="messages.html">
+                Messages
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+
+            <a href="signup.html" class="signup-btn">
+                Sign Up
+            </a>
+
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="products-header">
+
+    <div>
+
+        <span class="small-title">
+            ECOFINDS MARKETPLACE
+        </span>
+
+        <h1>Find Your Next Find</h1>
+
+        <p>
+            Discover quality pre-loved products and give them
+            a second life.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MARKETPLACE ================= -->
+
+<main class="marketplace">
+
+    <!-- FILTER SIDEBAR -->
+
+    <aside class="filter-sidebar">
+
+        <div class="filter-heading">
+
+            <h2>Filters</h2>
+
+            <button id="clearFilters">
+                Clear All
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="filter-group">
+
+            <label>
+                Search
+            </label>
+
+            <div class="filter-search">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="filter-group">
+
+            <label>
+                Category
+            </label>
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="electronics">
+                    Electronics
+                </option>
+
+                <option value="books">
+                    Books
+                </option>
+
+                <option value="clothing">
+                    Clothing
+                </option>
+
+                <option value="furniture">
+                    Furniture
+                </option>
+
+                <option value="sports">
+                    Sports
+                </option>
+
+                <option value="other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- CONDITION -->
+
+        <div class="filter-group">
+
+            <label>
+                Condition
+            </label>
+
+            <select id="conditionFilter">
+
+                <option value="all">
+                    Any Condition
+                </option>
+
+                <option value="new">
+                    New
+                </option>
+
+                <option value="like-new">
+                    Like New
+                </option>
+
+                <option value="good">
+                    Good
+                </option>
+
+                <option value="fair">
+                    Fair
+                </option>
+
+                <option value="used">
+                    Used
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="filter-group">
+
+            <label>
+                Price Range
+            </label>
+
+            <div class="price-inputs">
+
+                <input
+                    type="number"
+                    id="minPrice"
+                    placeholder="Min ₹"
+                    min="0"
+                >
+
+                <span>–</span>
+
+                <input
+                    type="number"
+                    id="maxPrice"
+                    placeholder="Max ₹"
+                    min="0"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="filter-group">
+
+            <label>
+                Location
+            </label>
+
+            <input
+                type="text"
+                id="locationFilter"
+                class="normal-input"
+                placeholder="e.g. Udupi"
+            >
+
+        </div>
+
+
+        <!-- ECO SCORE -->
+
+        <div class="filter-group">
+
+            <label>
+                Minimum Eco Score
+            </label>
+
+            <input
+                type="range"
+                id="ecoFilter"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <div class="range-value">
+
+                <span>0</span>
+
+                <strong id="ecoValue">
+                    0+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="apply-filter-btn"
+            id="applyFilters"
+        >
+            Apply Filters
+        </button>
+
+    </aside>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products-content">
+
+        <div class="products-toolbar">
+
+            <div>
+
+                <strong id="productCount">
+                    8 Products
+                </strong>
+
+                <span>
+                    available
+                </span>
+
+            </div>
+
+
+            <div class="sort-box">
+
+                <label for="sortProducts">
+                    Sort:
+                </label>
+
+                <select id="sortProducts">
+
+                    <option value="newest">
+                        Newest
+                    </option>
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="eco">
+                        Eco Score
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div class="products-grid marketplace-grid"
+             id="productsGrid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="books"
+                data-condition="good"
+                data-price="350"
+                data-location="udupi"
+                data-eco="88"
+                data-name="engineering mathematics book"
+            >
+
+                <div class="product-image">
+
+                    📚
+
+                    <span class="condition">
+                        Good
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Books
+                    </span>
+
+                    <h3>
+                        Engineering Mathematics Book
+                    </h3>
+
+                    <p class="location">
+                        📍 Udupi
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹350
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 88
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 2 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="electronics"
+                data-condition="like-new"
+                data-price="800"
+                data-location="manipal"
+                data-eco="76"
+                data-name="wireless keyboard"
+            >
+
+                <div class="product-image electronics">
+
+                    💻
+
+                    <span class="condition">
+                        Like New
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Electronics
+                    </span>
+
+                    <h3>
+                        Wireless Keyboard
+                    </h3>
+
+                    <p class="location">
+                        📍 Manipal
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹800
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 76
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 3 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="clothing"
+                data-condition="good"
+                data-price="450"
+                data-location="mangalore"
+                data-eco="91"
+                data-name="cotton casual shirt"
+            >
+
+                <div class="product-image clothing">
+
+                    👕
+
+                    <span class="condition">
+                        Good
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Clothing
+                    </span>
+
+                    <h3>
+                        Cotton Casual Shirt
+                    </h3>
+
+                    <p class="location">
+                        📍 Mangalore
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹450
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 91
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 4 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="furniture"
+                data-condition="used"
+                data-price="1500"
+                data-location="udupi"
+                data-eco="95"
+                data-name="wooden study table"
+            >
+
+                <div class="product-image furniture">
+
+                    🪑
+
+                    <span class="condition">
+                        Used
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Furniture
+                    </span>
+
+                    <h3>
+                        Wooden Study Table
+                    </h3>
+
+                    <p class="location">
+                        📍 Udupi
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹1,500
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 95
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 5 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="sports"
+                data-condition="good"
+                data-price="700"
+                data-location="manipal"
+                data-eco="82"
+                data-name="cricket bat"
+            >
+
+                <div class="product-image sports">
+
+                    🏏
+
+                    <span class="condition">
+                        Good
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Sports
+                    </span>
+
+                    <h3>
+                        Cricket Bat
+                    </h3>
+
+                    <p class="location">
+                        📍 Manipal
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹700
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 82
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 6 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="electronics"
+                data-condition="good"
+                data-price="1200"
+                data-location="mangalore"
+                data-eco="79"
+                data-name="headphones"
+            >
+
+                <div class="product-image electronics">
+
+                    🎧
+
+                    <span class="condition">
+                        Good
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Electronics
+                    </span>
+
+                    <h3>
+                        Bluetooth Headphones
+                    </h3>
+
+                    <p class="location">
+                        📍 Mangalore
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹1,200
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 79
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 7 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="other"
+                data-condition="like-new"
+                data-price="300"
+                data-location="udupi"
+                data-eco="90"
+                data-name="reusable water bottle"
+            >
+
+                <div class="product-image bottle">
+
+                    🥤
+
+                    <span class="condition">
+                        Like New
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Other
+                    </span>
+
+                    <h3>
+                        Reusable Water Bottle
+                    </h3>
+
+                    <p class="location">
+                        📍 Udupi
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹300
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 90
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 8 -->
+
+            <article
+                class="product-card marketplace-card"
+                data-category="clothing"
+                data-condition="fair"
+                data-price="600"
+                data-location="manipal"
+                data-eco="86"
+                data-name="backpack"
+            >
+
+                <div class="product-image backpack">
+
+                    🎒
+
+                    <span class="condition">
+                        Fair
+                    </span>
+
+                    <button
+                        class="wishlist-btn"
+                        onclick="toggleWishlist(this)"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Clothing
+                    </span>
+
+                    <h3>
+                        College Backpack
+                    </h3>
+
+                    <p class="location">
+                        📍 Manipal
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            ₹600
+                        </strong>
+
+                        <span class="eco-score">
+                            🌱 86
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="product-details.html"
+                        class="details-btn"
+                    >
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+            class="empty-products"
+            id="emptyProducts"
+        >
+
+            <div>
+                🔎
+            </div>
+
+            <h2>
+                No products found
+            </h2>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 EcoFinds.
+            Give products a second life. 🌱
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="../static/js/main.js"></script>
+<script src="../static/js/products.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Product Details | EcoFinds</title>
+
+    <link
+        rel="stylesheet"
+        href="../static/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../static/css/products.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            🌱 <span>EcoFinds</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="products.html" class="active">
+                Browse
+            </a>
+
+            <a href="sell.html">
+                Sell
+            </a>
+
+            <a href="wishlist.html">
+                Wishlist
+            </a>
+
+            <a href="messages.html">
+                Messages
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <a
+                href="login.html"
+                class="login-btn"
+            >
+                Login
+            </a>
+
+            <a
+                href="signup.html"
+                class="signup-btn"
+            >
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<main class="product-details-page">
+
+    <div class="breadcrumb">
+
+        <a href="products.html">
+            Browse
+        </a>
+
+        <span>›</span>
+
+        <span>
+            Product Details
+        </span>
+
+    </div>
+
+
+    <div class="details-container">
+
+
+        <!-- IMAGE -->
+
+        <div class="details-image-container">
+
+            <div class="details-main-image">
+                📚
+            </div>
+
+            <div class="image-thumbnails">
+
+                <button class="thumbnail active">
+                    📚
+                </button>
+
+                <button class="thumbnail">
+                    📖
+                </button>
+
+                <button class="thumbnail">
+                    🌱
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="details-info">
+
+            <span class="product-category">
+                BOOKS
+            </span>
+
+
+            <h1>
+                Engineering Mathematics Book
+            </h1>
+
+
+            <div class="details-rating">
+
+                ⭐⭐⭐⭐⭐
+
+                <span>
+                    Excellent condition
+                </span>
+
+            </div>
+
+
+            <div class="details-price">
+                ₹350
+            </div>
+
+
+            <div class="eco-score-large">
+
+                <div class="eco-score-number">
+                    🌱 88
+                </div>
+
+                <div>
+
+                    <strong>
+                        Sustainability Score
+                    </strong>
+
+                    <p>
+                        Great eco-friendly choice!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="details-description">
+
+                <h3>
+                    About this product
+                </h3>
+
+                <p>
+                    Engineering Mathematics textbook in good
+                    condition. Pages are clean and there are
+                    no major damages. Perfect for students
+                    looking for an affordable second-hand book.
+                </p>
+
+            </div>
+
+
+            <div class="details-meta">
+
+                <div>
+
+                    <span>
+                        Condition
+                    </span>
+
+                    <strong>
+                        Good
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong>
+                        Books
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong>
+                        📍 Udupi
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SELLER -->
+
+            <div class="seller">
+
+                <div class="seller-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <span>
+                        Sold by
+                    </span>
+
+                    <strong>
+                        Ananya
+                    </strong>
+
+                    <small>
+                        EcoFinds member
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="details-actions">
+
+                <button
+                    class="primary-action"
+                    onclick="contactSeller()"
+                >
+                    💬 Contact Seller
+                </button>
+
+
+                <button
+                    class="wishlist-action"
+                    id="detailWishlist"
+                    onclick="toggleDetailWishlist()"
+                >
+                    ♡ Add to Wishlist
+                </button>
+
+            </div>
+
+
+            <div class="safety-note">
+
+                🛡️
+                <span>
+                    Always meet in a safe public place when
+                    exchanging products.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ECO IMPACT ================= -->
+
+    <section class="eco-impact">
+
+        <div>
+
+            <span class="small-title">
+                ECO IMPACT
+            </span>
+
+            <h2>
+                Why reusing this product matters
+            </h2>
+
+            <p>
+                Buying second-hand helps reduce unnecessary
+                production, resource consumption and waste.
+            </p>
+
+        </div>
+
+
+        <div class="impact-stats">
+
+            <div>
+
+                <strong>
+                    88/100
+                </strong>
+
+                <span>
+                    Eco Score
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    ♻️
+                </strong>
+
+                <span>
+                    Reusable
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    🌍
+                </strong>
+
+                <span>
+                    Less Waste
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 EcoFinds.
+            Give products a second life. 🌱
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="../static/js/main.js"></script>
+
+
+<script>
+
+function contactSeller() {
+
+    window.location.href =
+        "messages.html?product=engineering-mathematics-book";
+
+}
+
+
+function toggleDetailWishlist() {
+
+    const button =
+        document.getElementById("detailWishlist");
+
+
+    if (button.classList.contains("active")) {
+
+        button.classList.remove("active");
+
+        button.innerHTML =
+            "♡ Add to Wishlist";
+
+    } else {
+
+        button.classList.add("active");
+
+        button.innerHTML =
+            "♥ Added to Wishlist";
+
+    }
+
+}
+
+</script>
+
+
+<style>
+
+/* Product Details */
+
+.product-details-page {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 24px 80px;
+
+}
+
+
+.breadcrumb {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+
+}
+
+
+.breadcrumb a {
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.details-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: start;
+
+}
+
+
+.details-main-image {
+
+    height: 480px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #edf7f0;
+
+    border-radius: 18px;
+
+    font-size: 150px;
+
+}
+
+
+.image-thumbnails {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+}
+
+
+.thumbnail {
+
+    width: 70px;
+
+    height: 70px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.thumbnail.active {
+
+    border: 2px solid var(--primary);
+
+}
+
+
+.details-info h1 {
+
+    margin-top: 8px;
+
+    color: var(--text-dark);
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+}
+
+
+.details-rating {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+}
+
+
+.details-rating span {
+
+    color: var(--text-light);
+
+}
+
+
+.details-price {
+
+    margin-top: 25px;
+
+    color: var(--text-dark);
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+}
+
+
+.eco-score-large {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    background: var(--primary-light);
+
+    border-radius: 12px;
+
+}
+
+
+.eco-score-number {
+
+    color: var(--primary-dark);
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.eco-score-large strong {
+
+    color: var(--text-dark);
+
+    font-size: 13px;
+
+}
+
+
+.eco-score-large p {
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+}
+
+
+.details-description {
+
+    margin-top: 25px;
+
+}
+
+
+.details-description h3 {
+
+    color: var(--text-dark);
+
+    font-size: 16px;
+
+}
+
+
+.details-description p {
+
+    margin-top: 7px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+}
+
+
+.details-meta {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.details-meta div {
+
+    padding: 12px;
+
+    background: #f8faf8;
+
+    border-radius: 8px;
+
+}
+
+
+.details-meta span {
+
+    display: block;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+.details-meta strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--text-dark);
+
+    font-size: 12px;
+
+}
+
+
+.seller {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.seller-avatar {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary-dark);
+
+    border-radius: 50%;
+
+    font-weight: 800;
+
+}
+
+
+.seller span,
+.seller strong,
+.seller small {
+
+    display: block;
+
+}
+
+
+.seller span {
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+.seller strong {
+
+    color: var(--text-dark);
+
+    font-size: 13px;
+
+}
+
+
+.seller small {
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+.details-actions {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.primary-action,
+.wishlist-action {
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.primary-action {
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+
+.wishlist-action {
+
+    border: 1px solid var(--primary);
+
+    background: white;
+
+    color: var(--primary);
+
+}
+
+
+.wishlist-action.active {
+
+    background: var(--primary-light);
+
+}
+
+
+.safety-note {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #fff8e8;
+
+    border-radius: 8px;
+
+    color: #78622e;
+
+    font-size: 10px;
+
+}
+
+
+.eco-impact {
+
+    margin-top: 80px;
+
+    padding: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #edf8f1;
+
+    border-radius: 16px;
+
+}
+
+
+.eco-impact h2 {
+
+    margin-top: 7px;
+
+    color: var(--text-dark);
+
+}
+
+
+.eco-impact p {
+
+    max-width: 600px;
+
+    margin-top: 7px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+}
+
+
+.impact-stats {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+.impact-stats div {
+
+    text-align: center;
+
+}
+
+
+.impact-stats strong {
+
+    display: block;
+
+    color: var(--primary-dark);
+
+    font-size: 20px;
+
+}
+
+
+.impact-stats span {
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .details-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .details-main-image {
+
+        height: 350px;
+
+    }
+
+
+    .details-info h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .eco-impact {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .details-actions {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .details-meta {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .impact-stats {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+}
+
+</style>
+
+</body>
+</html>

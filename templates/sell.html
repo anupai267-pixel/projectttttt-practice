@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell an Item - EcoFinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">🌱 EcoFinds</a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('products.browse') }}" class="nav-link">Browse</a>
+                <a href="{{ url_for('admin.user_dashboard') }}" class="nav-link">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <div class="auth-card form-container-wide">
+            <h2>List an Item for Sale 🌱</h2>
+            <p>Give your items a second home and calculate their environmental savings.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('products.sell') }}" method="POST" enctype="multipart/form-data" id="sellForm">
+                <div class="form-group">
+                    <label for="title">Listing Title</label>
+                    <input type="text" id="title" name="title" class="form-control" required placeholder="e.g. Calculus Textbook 10th Ed">
+                </div>
+
+                <div class="form-row" style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" class="form-control" required>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Books">Books</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        <label for="condition">Condition</label>
+                        <select id="condition" name="condition" class="form-control" required>
+                            <option value="Used">Used</option>
+                            <option value="Fair">Fair</option>
+                            <option value="Good" selected>Good</option>
+                            <option value="Like New">Like New</option>
+                            <option value="New">New</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row" style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="price">Price ($ USD)</label>
+                        <input type="number" id="price" name="price" step="0.01" min="0" class="form-control" required placeholder="15.00">
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        <label for="location">Pickup Location / Campus</label>
+                        <input type="text" id="location" name="location" class="form-control" required placeholder="e.g. Main Library lobby">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Detailed Description</label>
+                    <textarea id="description" name="description" class="form-control" rows="4" required placeholder="Specify condition details, age, features..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Item Image (PNG, JPG, WEBP)</label>
+                    <input type="file" id="image" name="image" class="form-control" accept="image/*">
+                    <div id="imagePreview" class="image-preview-container"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Publish Listing 🌱</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/sell.js') }}"></script>
+</body>
+</html>

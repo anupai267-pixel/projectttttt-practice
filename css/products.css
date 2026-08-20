@@ -1,0 +1,436 @@
+/* =========================
+   PRODUCTS HEADER
+========================= */
+
+.products-header {
+    padding: 55px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf8f1,
+            #f8fcf9
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+.products-header > div {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.products-header h1 {
+    margin-top: 8px;
+
+    font-size: 42px;
+
+    color: var(--text-dark);
+}
+
+.products-header p {
+    margin-top: 8px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================
+   MARKETPLACE
+========================= */
+
+.marketplace {
+    max-width: 1250px;
+    margin: auto;
+
+    padding: 50px 24px;
+
+    display: grid;
+    grid-template-columns: 260px 1fr;
+
+    gap: 35px;
+}
+
+
+/* =========================
+   FILTER SIDEBAR
+========================= */
+
+.filter-sidebar {
+    height: fit-content;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+
+.filter-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+
+.filter-heading h2 {
+    font-size: 19px;
+
+    color: var(--text-dark);
+}
+
+
+.filter-heading button {
+    border: none;
+
+    background: none;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.filter-group {
+    margin-bottom: 22px;
+}
+
+
+.filter-group > label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.filter-search {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+
+.filter-search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+.filter-group select,
+.normal-input {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: white;
+
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+
+.filter-group select:focus,
+.normal-input:focus {
+    border-color: var(--primary);
+}
+
+
+.price-inputs {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.price-inputs input {
+    width: 100%;
+
+    padding: 9px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+
+.filter-group input[type="range"] {
+    width: 100%;
+
+    accent-color: var(--primary);
+}
+
+
+.range-value {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+
+.range-value strong {
+    color: var(--primary);
+}
+
+
+.apply-filter-btn {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.apply-filter-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.products-toolbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+.products-toolbar > div:first-child {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+.products-toolbar strong {
+    color: var(--text-dark);
+
+    font-size: 15px;
+}
+
+
+.sort-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.sort-box label {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+.sort-box select {
+    padding: 8px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: white;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MARKETPLACE CARDS
+========================= */
+
+.marketplace-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.marketplace-card .product-image {
+    height: 190px;
+}
+
+
+.product-image.sports {
+    background: #f2f5e8;
+}
+
+
+.product-image.bottle {
+    background: #eaf5f7;
+}
+
+
+.product-image.backpack {
+    background: #f5f0e8;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-products {
+    display: none;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+
+.empty-products.show {
+    display: block;
+}
+
+
+.empty-products > div {
+    font-size: 50px;
+}
+
+
+.empty-products h2 {
+    margin-top: 12px;
+
+    color: var(--text-dark);
+}
+
+
+.empty-products p {
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .marketplace {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .marketplace {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-sidebar {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .products-header {
+        padding: 40px 20px;
+    }
+
+    .products-header h1 {
+        font-size: 32px;
+    }
+
+    .marketplace {
+        padding: 30px 18px;
+    }
+
+    .marketplace-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+}

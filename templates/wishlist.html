@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist - EcoFinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">🌱 EcoFinds</a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('products.browse') }}" class="nav-link">Browse</a>
+                <a href="{{ url_for('admin.user_dashboard') }}" class="nav-link">Dashboard</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <h2>My Saved Wishlist Items</h2>
+        <div class="product-grid" style="margin-top: 25px;">
+            {% for item in items %}
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        {% if item.image %}
+                            <img src="{{ url_for('uploaded_file', filename=item.image) }}" alt="{{ item.title }}" class="product-img">
+                        {% else %}
+                            <div class="product-placeholder">📦 {{ item.category }}</div>
+                        {% endif %}
+                        <span class="eco-badge">🌱 {{ item.sustainability_score }}/100</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-condition">{{ item.condition }}</span>
+                        <h3 class="product-title">{{ item.title }}</h3>
+                        <p class="product-price">${{ "%.2f"|format(item.price) }}</p>
+                        <div class="product-actions">
+                            <a href="{{ url_for('products.details', product_id=item.id) }}" class="btn btn-primary btn-sm">Details</a>
+                            <form action="{{ url_for('wishlist.toggle_wishlist', product_id=item.id) }}" method="POST">
+                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="empty-state" style="padding: 40px; text-align: center; color: var(--text-muted);">
+                    Your wishlist is currently empty. Explore the <a href="{{ url_for('products.browse') }}" style="color: var(--primary-color);">Browse Catalog</a> to save items!
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

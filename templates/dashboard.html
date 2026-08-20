@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - EcoFinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">🌱 EcoFinds</a>
+            <nav class="nav-menu">
+                <a href="{{ url_for('products.browse') }}" class="nav-link">Browse</a>
+                <a href="{{ url_for('products.sell') }}" class="nav-link">Sell</a>
+                <a href="{{ url_for('wishlist.view_wishlist') }}" class="nav-link">Wishlist</a>
+                <a href="{{ url_for('messages.view_messages') }}" class="nav-link">Messages</a>
+                <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container section">
+        <h2>Welcome back, {{ session.get('user_name') }}! 🌱</h2>
+        <p class="subtitle" style="color: var(--text-muted);">Manage your sustainable marketplace activity.</p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>My Active Listings</h3>
+                <p class="stat-number">{{ stats.my_listings }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Wishlist Items</h3>
+                <p class="stat-number">{{ stats.wishlist_items }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Unread Messages</h3>
+                <p class="stat-number">{{ stats.unread_messages }}</p>
+            </div>
+        </div>
+
+        <div class="dashboard-actions" style="margin: 25px 0; display: flex; gap: 10px;">
+            <a href="{{ url_for('products.sell') }}" class="btn btn-primary">+ Sell New Item</a>
+            <a href="{{ url_for('wishlist.view_wishlist') }}" class="btn btn-secondary">View Saved Items</a>
+            <a href="{{ url_for('messages.view_messages') }}" class="btn btn-outline">Direct Messages</a>
+        </div>
+
+        <h3 style="margin-top: 30px;">My Posted Listings</h3>
+        <div class="table-container">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Eco Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in listings %}
+                        <tr>
+                            <td><strong>{{ item.title }}</strong></td>
+                            <td>{{ item.category }}</td>
+                            <td>${{ "%.2f"|format(item.price) }}</td>
+                            <td>🌱 {{ item.sustainability_score }}/100</td>
+                            <td>
+                                <a href="{{ url_for('products.details', product_id=item.id) }}" class="btn btn-sm btn-outline">View</a>
+                                <form action="{{ url_for('products.delete', product_id=item.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Delete this listing?');">
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 25px;">You haven't listed any items for sale yet.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
