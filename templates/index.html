@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoFinds | Give Products a Second Life</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                🌱 <span>EcoFinds</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Browse</a>
+                <a href="sell.html">Sell</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="messages.html">Messages</a>
+                <a href="dashboard.html">Dashboard</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-badge">
+                    🌍 Sustainable Marketplace
+                </span>
+
+                <h1>
+                    Give Products
+                    <span>a Second Life.</span>
+                </h1>
+
+                <p>
+                    Buy, sell and reuse products while helping create
+                    a cleaner and more sustainable future.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="products.html" class="primary-btn">
+                        Browse Products →
+                    </a>
+
+                    <a href="sell.html" class="secondary-btn">
+                        Sell an Item
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>1,200+</strong>
+                        <span>Products</span>
+                    </div>
+
+                    <div>
+                        <strong>850+</strong>
+                        <span>Users</span>
+                    </div>
+
+                    <div>
+                        <strong>2,500kg</strong>
+                        <span>Waste Reduced</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="eco-circle">
+                    🌱
+                </div>
+
+                <div class="floating-card card-one">
+                    ♻️ Reuse
+                </div>
+
+                <div class="floating-card card-two">
+                    💰 Save Money
+                </div>
+
+                <div class="floating-card card-three">
+                    🌍 Help Earth
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH SECTION ================= -->
+
+    <section class="search-section">
+
+        <div class="search-container">
+
+            <div>
+                <h2>Find Your Next Eco-Friendly Find</h2>
+                <p>Search thousands of pre-loved products.</p>
+            </div>
+
+            <form class="search-box" id="searchForm">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for books, electronics, clothes..."
+                >
+
+                <button type="submit">
+                    🔍 Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">EXPLORE</span>
+                <h2>Shop by Category</h2>
+            </div>
+
+            <a href="products.html" class="view-link">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="categories">
+
+            <a href="products.html?category=electronics" class="category-card">
+                <div class="category-icon">💻</div>
+                <h3>Electronics</h3>
+                <p>120+ items</p>
+            </a>
+
+            <a href="products.html?category=books" class="category-card">
+                <div class="category-icon">📚</div>
+                <h3>Books</h3>
+                <p>250+ items</p>
+            </a>
+
+            <a href="products.html?category=clothing" class="category-card">
+                <div class="category-icon">👕</div>
+                <h3>Clothing</h3>
+                <p>180+ items</p>
+            </a>
+
+            <a href="products.html?category=furniture" class="category-card">
+                <div class="category-icon">🪑</div>
+                <h3>Furniture</h3>
+                <p>90+ items</p>
+            </a>
+
+            <a href="products.html?category=sports" class="category-card">
+                <div class="category-icon">⚽</div>
+                <h3>Sports</h3>
+                <p>75+ items</p>
+            </a>
+
+            <a href="products.html?category=other" class="category-card">
+                <div class="category-icon">📦</div>
+                <h3>Other</h3>
+                <p>150+ items</p>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+
+    <section class="section products-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">DISCOVER</span>
+                <h2>Featured Finds</h2>
+            </div>
+
+            <a href="products.html" class="view-link">
+                Browse All →
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+                    📚
+                    <span class="condition">Good</span>
+
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        ♡
+                    </button>
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">Books</span>
+
+                    <h3>Engineering Mathematics Book</h3>
+
+                    <p class="location">📍 Udupi</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹350</strong>
+
+                        <span class="eco-score">
+                            🌱 88
+                        </span>
+
+                    </div>
+
+                    <a href="product-details.html" class="details-btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 2 -->
+
+            <article class="product-card">
+
+                <div class="product-image electronics">
+                    💻
+                    <span class="condition">Like New</span>
+
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        ♡
+                    </button>
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">Electronics</span>
+
+                    <h3>Wireless Keyboard</h3>
+
+                    <p class="location">📍 Manipal</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹800</strong>
+
+                        <span class="eco-score">
+                            🌱 76
+                        </span>
+
+                    </div>
+
+                    <a href="product-details.html" class="details-btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 3 -->
+
+            <article class="product-card">
+
+                <div class="product-image clothing">
+                    👕
+                    <span class="condition">Good</span>
+
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        ♡
+                    </button>
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">Clothing</span>
+
+                    <h3>Cotton Casual Shirt</h3>
+
+                    <p class="location">📍 Mangalore</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹450</strong>
+
+                        <span class="eco-score">
+                            🌱 91
+                        </span>
+
+                    </div>
+
+                    <a href="product-details.html" class="details-btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Product 4 -->
+
+            <article class="product-card">
+
+                <div class="product-image furniture">
+                    🪑
+                    <span class="condition">Used</span>
+
+                    <button class="wishlist-btn" onclick="toggleWishlist(this)">
+                        ♡
+                    </button>
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">Furniture</span>
+
+                    <h3>Study Table</h3>
+
+                    <p class="location">📍 Udupi</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹1,500</strong>
+
+                        <span class="eco-score">
+                            🌱 95
+                        </span>
+
+                    </div>
+
+                    <a href="product-details.html" class="details-btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY ECOFINDS ================= -->
+
+    <section class="why-section">
+
+        <div class="section-heading centered">
+
+            <div>
+                <span class="small-title">WHY ECOFINDS?</span>
+                <h2>Small Actions. Big Impact.</h2>
+            </div>
+
+            <p>
+                Every product reused is one less product that ends up as waste.
+            </p>
+
+        </div>
+
+
+        <div class="benefits">
+
+            <div class="benefit-card">
+                <div class="benefit-icon">♻️</div>
+                <h3>Reduce Waste</h3>
+                <p>
+                    Give useful products a second life instead of throwing them away.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Save Money</h3>
+                <p>
+                    Find quality pre-loved products at affordable prices.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌱</div>
+                <h3>Live Sustainably</h3>
+                <p>
+                    Make environmentally responsible choices every day.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="section">
+
+        <div class="section-heading centered">
+
+            <div>
+                <span class="small-title">HOW IT WORKS</span>
+                <h2>Start Making an Impact</h2>
+            </div>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Find</h3>
+
+                <p>
+                    Search and discover products you need.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Connect</h3>
+
+                <p>
+                    Contact sellers and ask about the product.
+                </p>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Reuse</h3>
+
+                <p>
+                    Give a product a second life and reduce waste.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SELL CTA ================= -->
+
+    <section class="sell-cta">
+
+        <div>
+
+            <span>Have something you don't use anymore?</span>
+
+            <h2>
+                Turn Your Unused Items Into Someone's Next Find.
+            </h2>
+
+            <p>
+                Sell your pre-loved products and help build a circular economy.
+            </p>
+
+            <a href="sell.html" class="cta-btn">
+                Start Selling →
+            </a>
+
+        </div>
+
+        <div class="cta-icon">
+            🌱
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    🌱 <span>EcoFinds</span>
+                </a>
+
+                <p>
+                    Give products a second life.
+                    Build a cleaner and more sustainable future.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="products.html">Browse Products</a>
+                <a href="sell.html">Sell an Item</a>
+                <a href="wishlist.html">Wishlist</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Account</h3>
+
+                <a href="login.html">Login</a>
+                <a href="signup.html">Create Account</a>
+                <a href="dashboard.html">Dashboard</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>EcoFinds</h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 EcoFinds. Give products a second life. 🌱
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../static/js/main.js"></script>
+
+</body>
+</html>

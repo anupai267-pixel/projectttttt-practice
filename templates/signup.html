@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | EcoFinds</title>
+
+    <link rel="stylesheet"
+          href="../static/css/style.css">
+
+    <link rel="stylesheet"
+          href="../static/css/auth.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html"
+               class="logo">
+
+                🌱 <span>EcoFinds</span>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="products.html">
+                    Browse
+                </a>
+
+                <a href="sell.html">
+                    Sell
+                </a>
+
+            </nav>
+
+
+            <div class="nav-buttons">
+
+                <a href="login.html"
+                   class="login-btn">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIGNUP PAGE -->
+
+    <main class="auth-page">
+
+        <div class="auth-container signup-container">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="auth-visual">
+
+                <div class="auth-leaf">
+                    🌍
+                </div>
+
+                <h2>Join EcoFinds</h2>
+
+                <p>
+                    Become part of a community that believes
+                    every product deserves a second life.
+                </p>
+
+
+                <div class="auth-points">
+
+                    <div>
+                        🌱
+                        <span>Shop sustainably</span>
+                    </div>
+
+                    <div>
+                        ♻️
+                        <span>Reduce waste</span>
+                    </div>
+
+                    <div>
+                        🤝
+                        <span>Connect with others</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="auth-form-container">
+
+                <div class="auth-heading">
+
+                    <span class="small-title">
+                        GET STARTED
+                    </span>
+
+                    <h1>Create Your Account</h1>
+
+                    <p>
+                        Already have an account?
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <form
+                    id="signupForm"
+                    class="auth-form"
+                >
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="signupName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                        <small
+                            class="error-message"
+                            id="signupNameError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="signupEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                        <small
+                            class="error-message"
+                            id="signupEmailError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="signupPassword">
+                            Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                placeholder="Minimum 6 characters"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('signupPassword', this)"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="signupPasswordError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Re-enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('confirmPassword', this)"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                        <small
+                            class="error-message"
+                            id="confirmPasswordError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <div class="terms-row">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+
+                            I agree to the
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <p class="bottom-text">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login here
+                        </a>
+
+                    </p>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="simple-footer">
+
+        <p>
+            © 2026 EcoFinds.
+            Give products a second life. 🌱
+        </p>
+
+    </footer>
+
+
+    <script src="../static/js/auth.js"></script>
+
+</body>
+</html>
