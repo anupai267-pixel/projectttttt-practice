@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+database/ecofinds.db
+uploads/products/*
+!uploads/products/.gitkeep
